@@ -4,16 +4,28 @@
 #
 Name     : R-BatchJobs
 Version  : 1.7
-Release  : 12
+Release  : 13
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.7.tar.gz
 Summary  : Batch Computing with R
 Group    : Development/Tools
 License  : BSD-2-Clause
+Requires: R-DBI
+Requires: R-Rcpp
+Requires: R-base64enc
+Requires: R-blob
+Requires: R-checkmate
+Requires: R-memoise
 BuildRequires : R-BBmisc
+BuildRequires : R-DBI
 BuildRequires : R-RSQLite
+BuildRequires : R-Rcpp
+BuildRequires : R-base64enc
+BuildRequires : R-blob
 BuildRequires : R-brew
+BuildRequires : R-checkmate
 BuildRequires : R-data.table
+BuildRequires : R-memoise
 BuildRequires : R-sendmailR
 BuildRequires : buildreq-R
 
@@ -30,10 +42,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1552712954
+export SOURCE_DATE_EPOCH=1556463896
 
 %install
-export SOURCE_DATE_EPOCH=1552712954
+export SOURCE_DATE_EPOCH=1556463896
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -69,7 +81,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  BatchJobs || :
+R CMD check --no-manual --no-examples --no-codoc BatchJobs || :
 
 
 %files

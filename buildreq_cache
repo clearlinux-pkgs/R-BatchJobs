@@ -1,6 +1,12 @@
 1.7
 R-BBmisc
+R-DBI
 R-RSQLite
+R-Rcpp
+R-base64enc
+R-blob
 R-brew
+R-checkmate
 R-data.table
+R-memoise
 R-sendmailR
