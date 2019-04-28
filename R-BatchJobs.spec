@@ -4,18 +4,12 @@
 #
 Name     : R-BatchJobs
 Version  : 1.7
-Release  : 14
+Release  : 15
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.7.tar.gz
 Summary  : Batch Computing with R
 Group    : Development/Tools
 License  : BSD-2-Clause
-Requires: R-DBI
-Requires: R-Rcpp
-Requires: R-base64enc
-Requires: R-blob
-Requires: R-checkmate
-Requires: R-memoise
 BuildRequires : R-BBmisc
 BuildRequires : R-DBI
 BuildRequires : R-RSQLite
@@ -42,10 +36,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1556463896
+export SOURCE_DATE_EPOCH=1556486557
 
 %install
-export SOURCE_DATE_EPOCH=1556463896
+export SOURCE_DATE_EPOCH=1556486557
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
