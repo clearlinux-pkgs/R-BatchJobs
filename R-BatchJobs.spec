@@ -4,7 +4,7 @@
 #
 Name     : R-BatchJobs
 Version  : 1.8
-Release  : 18
+Release  : 19
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Summary  : Batch Computing with R
@@ -13,25 +13,27 @@ License  : BSD-2-Clause
 Requires: R-BBmisc
 Requires: R-DBI
 Requires: R-RSQLite
-Requires: R-Rcpp
-Requires: R-base64enc
-Requires: R-blob
+Requires: R-backports
 Requires: R-brew
 Requires: R-checkmate
 Requires: R-data.table
-Requires: R-memoise
+Requires: R-digest
 Requires: R-sendmailR
+Requires: R-stringi
 BuildRequires : R-BBmisc
 BuildRequires : R-DBI
 BuildRequires : R-RSQLite
 BuildRequires : R-Rcpp
+BuildRequires : R-backports
 BuildRequires : R-base64enc
 BuildRequires : R-blob
 BuildRequires : R-brew
 BuildRequires : R-checkmate
 BuildRequires : R-data.table
+BuildRequires : R-digest
 BuildRequires : R-memoise
 BuildRequires : R-sendmailR
+BuildRequires : R-stringi
 BuildRequires : buildreq-R
 
 %description
@@ -46,13 +48,13 @@ computing systems like PBS/Torque, LSF, SLURM and Sun Grid Engine.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1557933740
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1562443877
 
 %install
-export SOURCE_DATE_EPOCH=1557933740
+export SOURCE_DATE_EPOCH=1562443877
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -81,7 +83,7 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
