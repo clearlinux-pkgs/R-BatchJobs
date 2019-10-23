@@ -4,7 +4,7 @@
 #
 Name     : R-BatchJobs
 Version  : 1.8
-Release  : 19
+Release  : 20
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Summary  : Batch Computing with R
@@ -35,6 +35,7 @@ BuildRequires : R-memoise
 BuildRequires : R-sendmailR
 BuildRequires : R-stringi
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 computing systems like PBS/Torque, LSF, SLURM and Sun Grid Engine.
@@ -49,10 +50,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1562443877
+export SOURCE_DATE_EPOCH=1571797321
 
 %install
-export SOURCE_DATE_EPOCH=1562443877
+export SOURCE_DATE_EPOCH=1571797321
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
