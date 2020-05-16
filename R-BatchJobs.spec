@@ -4,7 +4,7 @@
 #
 Name     : R-BatchJobs
 Version  : 1.8
-Release  : 23
+Release  : 24
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Summary  : Batch Computing with R
@@ -23,19 +23,14 @@ Requires: R-stringi
 BuildRequires : R-BBmisc
 BuildRequires : R-DBI
 BuildRequires : R-RSQLite
-BuildRequires : R-Rcpp
 BuildRequires : R-backports
-BuildRequires : R-base64enc
-BuildRequires : R-blob
 BuildRequires : R-brew
 BuildRequires : R-checkmate
 BuildRequires : R-data.table
 BuildRequires : R-digest
-BuildRequires : R-memoise
 BuildRequires : R-sendmailR
 BuildRequires : R-stringi
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 computing systems like PBS/Torque, LSF, SLURM and Sun Grid Engine.
@@ -44,21 +39,22 @@ computing systems like PBS/Torque, LSF, SLURM and Sun Grid Engine.
 
 %prep
 %setup -q -c -n BatchJobs
+cd %{_builddir}/BatchJobs
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571797321
+export SOURCE_DATE_EPOCH=1589592461
 
 %install
-export SOURCE_DATE_EPOCH=1571797321
+export SOURCE_DATE_EPOCH=1589592461
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
