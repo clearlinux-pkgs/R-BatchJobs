@@ -4,7 +4,7 @@
 #
 Name     : R-BatchJobs
 Version  : 1.8
-Release  : 36
+Release  : 37
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.8.tar.gz
 Summary  : Batch Computing with R
