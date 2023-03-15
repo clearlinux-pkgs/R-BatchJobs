@@ -4,7 +4,7 @@
 #
 Name     : R-BatchJobs
 Version  : 1.9
-Release  : 44
+Release  : 45
 URL      : https://cran.r-project.org/src/contrib/BatchJobs_1.9.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/BatchJobs_1.9.tar.gz
 Summary  : Batch Computing with R
